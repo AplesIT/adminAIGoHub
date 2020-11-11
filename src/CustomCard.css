@@ -1,0 +1,48 @@
+.special-item
+{
+    position: relative;
+    display: block;
+
+}
+.bookMark
+{
+    position: absolute;
+    
+    right: 3%; 
+}
+.mcard-body-text
+{
+    margin: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    color: gray;
+}
+.mcard-body-rate
+{
+
+    margin-top: 5%;
+    margin-left: 1px;
+    bottom: 0%;
+}
+.txt-rate
+{
+    text-align: center;
+    letter-spacing: normal;
+    font-size: 12px;
+    color: rgb(114, 114, 114);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.special-item
+{
+    width: 230px !important;
+    height: 180px !important; 
+}
+.item-row:hover{
+    -moz-box-shadow:     0 0 10px #000000;
+    -webkit-box-shadow:   0 0 10px #000000;
+    box-shadow:         0 0 10px #000000;
+}

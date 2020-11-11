@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+.container-table body {
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  color: #4d4d4d;
+}
+.container-table 
+{
+    margin-left: 7%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-right: 1%;
+}
+
+.container-table #title {
+  text-align: center;
+}
+.container-table table 
+{
+    border-collapse: collapse;
+    border-radius: 1em;
+}
+
+.container-table  #employee {
+
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 20px !important;
+}
+.container-table #employee td,m
+.container-table #employee th {
+   
+  padding: 12px;
+  
+}
+
+.container-table #employee tr:hover {
+  background-color: #ddd;
+}
+
+.container-table #employee th {
+  padding: 10px;
+  text-align: center;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 1;
+}
+
+.container-table .opration {
+  text-align: center;
+}
+
+.container-table .button-remove{
+  border: none;
+  outline: none;
+  font-size: 11px;
+  font-family: "Quicksand", sans-serif;
+  color: #f44336;
+  padding: 3px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #f44336;
+  background-color: transparent;
+  margin-left: 5px;
+}
+.container-table .button-edit{
+    border: none;
+    outline: none;
+    margin-left: 4px;
+    font-size: 11px;
+    font-family: "Quicksand", sans-serif;
+    color: #3659f4;
+    padding: 3px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid #3659f4;
+    background-color: transparent;
+  }
+  
+.container-table .button-remove:active {
+  border: 1px solid blue;
+  background-color: green;
+}
+.container-table .pagination
+{
+  margin-top: 20px;
+  float: right;
+  margin-right: 10%;
+}
+.btn-success, .btn-success:hover
+{
+  outline-style: none;
+  background-color: #36a2f4;
+  border: 0px;
+  border-radius: 15px;
+}

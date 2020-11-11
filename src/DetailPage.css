@@ -1,0 +1,32 @@
+ 
+.react-player {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    border-radius: 5%;
+    overflow: hidden;
+  }
+  .stock {
+    right: 10%;
+ 
+    position: absolute;
+ 
+    flex-grow: 1; 
+    flex-basis: 30%; 
+  }
+  .btn-show
+  {
+    box-shadow: none;
+    background-color: transparent;
+    color: #5c6ac4;
+ 
+    border-style: solid;
+    border-color: #5c6ac4;
+  }
+  .list-item 
+  {
+    margin-right: 2em;
+    padding: 0 10px 0 10px;
+  }
+ 
+    
