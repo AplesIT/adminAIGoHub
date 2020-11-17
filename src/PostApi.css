@@ -1,0 +1,67 @@
+.fileContainer .uploadPictureContainer {
+    width: 25%;
+    margin: 1% !important;
+    padding: 5px !important;
+    box-shadow: none !important;}
+.fileContainer
+{
+    box-shadow: none !important;}
+.react-tag-input {
+    min-height: 30px;
+    margin: 0px 10px 0px 10px;
+}
+.react-tag-input__tag {
+    min-height: 30px;
+    border-radius: 10px !important;
+    background: gold !important;
+}
+.react-tag-input__tag__remove {
+ 
+    min-height: 30px;
+    border-radius: 10px !important;
+    background:gold !important;
+}
+.react-tag-input__tag__content {
+   font-size: 1.25em;
+   font-weight:  1000;
+    color: black !important;
+}
+.video-container
+{
+    min-height: 30rem !important;
+}
+.video-container .react-player 
+{
+    margin-left: 5% !important;
+    margin-top: 5% !important; 
+    min-width: 40rem !important;
+     min-height: 20rem !important;
+}
+.txt-title-card
+{
+    position: absolute;
+    z-index: 9999;
+    top: -25px;
+    left: 30%;
+}
+.txt-title-card-pricing
+{
+    position: absolute;
+    z-index: 9999;
+    top: -25px;
+    left: 40%;
+}
+.txt-title-name
+{
+    position: absolute;
+    z-index: 9999;
+    top: -25px;
+    left: 35%;
+}
+.txt-title-video
+{
+    position: absolute;
+    z-index: 9999;
+    top: -25px;
+    left: 35%;
+}

@@ -10,6 +10,7 @@ import React from 'react'
 import Poster from './Poster';
 import DetailPage from "./DetailPage";
 import ManagerUser from "./MangerUser"
+import PostApi from './PostApi';
 function App() {
   const [theme,setTheme]=React.useState(true);
   const [isAuthor,setAuthor] =React.useState(false);
@@ -40,6 +41,7 @@ function App() {
     <Route path="/listapi" render={()=><ListApi setAuthor={setAuthor} />}/>
     <Route path="/poster" render={()=><Poster setAuthor={setAuthor}/>}/>
   <Route path="/home" render={()=><HomePage setAuthor={setAuthor}/>} />
+  <Route path="/postapi" render={()=><PostApi setAuthor={setAuthor}/>} />
   <Route path="/detail" render={()=><DetailPage setAuthor={setAuthor}/>} />
   <Route path="/managerUser" render={()=><ManagerUser setAuthor={setAuthor} mainPrimaryColor={mainPrimaryColor} mainSecondaryColor={mainSecondaryColor}/>} />
   </Switch>
