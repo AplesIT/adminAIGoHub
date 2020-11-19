@@ -18,10 +18,15 @@ import FormControl from '@material-ui/core/FormControl';
 import ReactTagInput from "@pathofdev/react-tag-input";
 import "@pathofdev/react-tag-input/build/index.css";
 
-import BorderWrapper from 'react-border-wrapper'
+ 
+import 'react-notifications/lib/notifications.css';
+import {NotificationContainer, NotificationManager} from 'react-notifications';
+
+
+import { withRouter } from 'react-router-dom';
 
 import "./PostApi.css"
-export default function PostApi(props) {
+ function PostApi(props) {
     const { detailApi, setApi } = useState(
         {
             name: "",
@@ -116,14 +121,42 @@ export default function PostApi(props) {
         comma: 188,
         enter: 13,
     };
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+    const createNotification = async (type) => {
+ 
+          switch (type) {
+            case 'info':
+              NotificationManager.info('Info message');
+              break;
+            case 'success':
+             
+              NotificationManager.success('Success message', 'Create success item',1000);
+              await sleep(1000);
+              props.history.push("/detail")
+              break;
+            case 'warning':
+              NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
+              break;
+            case 'error':
+              NotificationManager.error('Error message', 'Click me!', 5000, () => {
+                alert('callback');
+              });
+              break;
+        };
+      };
 
     const delimiters = [KeyCodes.comma, KeyCodes.enter];
     const classes = useStyles();
     return (
         <div style={{ position: "relative" }} className="PostApi">
+           
             <Button
                 variant="contained"
                 className="capitalize btn-submit"
+                onClick={()=>createNotification('success')}
             >
                 Create
             </Button>
@@ -133,21 +166,25 @@ export default function PostApi(props) {
 
                     <div className="d-flex flex-row row w-100 ml-3 mt-5">
                         <div className="d-flex flex-column col-5 ml-3 shadow-lg rounded" style={{ position: "relative" }}>
-                            <h2 className="txt-title-name">Name Api</h2>
+                            <div className="txt-title-name" style={{background: "white", margin: "5px"}}>
+                                 <h2 >Name Api</h2>
+                            </div>
                             <div className="d-flex flex-row row mt-3">
 
 
-                                <TextField style={{ height: "20px" }} className="col-8 ml-4" InputProps={{ className: classes.multilineColor }} required id="name" variant="outlined" label="Name" placeholder="Enter Name Api" defaultValue="FaceBook" />
+                                <TextField style={{ height: "20px" }} className="col-8 ml-3 mr-3" InputProps={{ className: classes.multilineColor }} required id="name" variant="outlined" label="Name" placeholder="Enter Name Api" defaultValue="FaceBook" />
                                 <TextField className="col-3" InputProps={{ className: classes.multilineColor }} required id="author" variant="outlined" label="Author" placeholder="Enter Author"></TextField>
                                 <br />
                             </div>
                             <div className="w-100">
-                                <TextField InputProps={{ className: classes.multilineColor }} className="sologan" required id="sologan" variant="outlined" label="Sologan" placeholder="Enter sologan"></TextField>
+                                <TextField  className="sologan" InputProps={{ className: classes.multilineColor }}  required id="sologan" variant="outlined"   label="Sologan" placeholder="Enter sologan" ></TextField>
                                 <br />
                             </div>
                         </div>
-                        <div className="video-container flex-column col-6 ml-3 shadow-lg rounded" style={{ minHeight: "100px", position: "relative" }}>
-                            <h2 className="txt-title-video">Video Api</h2>
+                        <div className="video-container flex-column col-6 ml-3 pr-3 shadow-lg rounded" style={{ minHeight: "100px", position: "relative" }}>
+                        <div className="txt-title-name" style={{background: "white", margin: "5px"}}>
+                            <h2 >Video Api</h2>
+                        </div>
                             <div className="  d-flex flex-row row mt-3" style={{ color: "black !important" }}>
                                 <TextField className="col-10 urlVideo" InputProps={{ className: classes.multilineColor }} style={{ color: "black !important" }} required id="video" variant='outlined' label="Youtube" placeholder="Enter demo video" />
                                 <Button className="col-1" style={{ margin: "10px" }} variant="contained" color="primary" href="#contained-buttons" onClick={() => {
@@ -173,10 +210,10 @@ export default function PostApi(props) {
 
                     {desctiption.map((i) =>
                         (
-                            <div className="shadow-lg  col-3 mb-5 ml-5 rounded" style={{ position: "relative" }}>
+                            <div className="shadow-lg  col-3 mb-5 ml-5 rounded" style={{ position: "relative", paddingRight: "4vh", paddingTop: "2vh"}}>
 
                                 <TextField InputProps={{ className: classes.multilineColor }} className="urlVideo " required id="video" variant='outlined' label="Youtube" placeholder="Enter demo video" />
-                                <TextareaAutosize style={{ marginLeft: "10px", width: "35ch", marginBottom: 10 }} aria-label="minimum height" rowsMin={5} placeholder="Minimum 3 rows" />
+                                <TextareaAutosize style={{ marginLeft: "10px", width: "36ch", marginBottom: 10 }} aria-label="minimum height" rowsMin={5} placeholder="Minimum 3 rows" />
                             </div>
                         ))}
                     <div className="shadow-lg  col-3 ml-3 mb-5  ml-5 rounded" style={{ position: "relative", minHeight: "15rem" }}>
@@ -192,8 +229,10 @@ export default function PostApi(props) {
                 </div>
                 <h1 className="ml-5 mt-3">Images & Pricing</h1>
                 <div className="d-flex justify-content-center w-100 row mb-5" style={{ position: "relative" }}>
-                    <div className="shadow-lg m-5 col-5 " style={{ background: "inherit", height: "50%" }}>
-                        <h2 className="txt-title-card">Media gallery</h2>
+                    <div className="shadow-lg m-5 col-5 rounded" style={{ background: "inherit", height: "50%" }}>
+                    <div className="txt-title-name" style={{background: "white", margin: "5px"}}>
+                        <h2 >Media gallery</h2>
+                    </div>
                         <ImageUploader
                             withIcon={true}
                             buttonText='Choose images'
@@ -204,7 +243,9 @@ export default function PostApi(props) {
                         />
                     </div>
                     <div className="col-5 shadow-lg rounded mt-5 d-flex flex-column mb-3" style={{ padding: "30px", position: "relative" }}>
-                        <h2 className="txt-title-card-pricing">Pricing</h2>
+                    <div className="txt-title-name" style={{background: "white", marginLeft: "5%"}}>
+                        <h2>Pricing</h2>
+                    </div>
                         {price.map((i) => (
                             <div className="item-row-price">
 
@@ -220,7 +261,7 @@ export default function PostApi(props) {
                                 </FormControl>
                                 <ReactTagInput
                                     tags={tagPrice}
-                                    placeholder="Type and press enter"
+                                    placeholder="Enter price have features"
                                     maxTags={10}
                                     editable={true}
                                     readOnly={false}
@@ -245,7 +286,8 @@ export default function PostApi(props) {
                 </div>
 
             </form>
-
+            <NotificationContainer/>
         </div>
     )
 }
+export default withRouter(PostApi);

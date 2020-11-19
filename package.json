@@ -30,6 +30,7 @@
     "react-material-ui-form-validator": "^2.1.1",
     "react-multi-carousel": "^2.5.5",
     "react-multiple-image-input": "^1.0.0",
+    "react-notifications": "^1.7.2",
     "react-player": "^2.6.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
