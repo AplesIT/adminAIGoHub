@@ -153,7 +153,7 @@ import "./PostApi.css"
     return (
         <div style={{ position: "relative" }} className="PostApi">
            
-            <Button
+            <Button style ={{marginBottom: "5%"}}
                 variant="contained"
                 className="capitalize btn-submit"
                 onClick={()=>createNotification('success')}
@@ -162,11 +162,11 @@ import "./PostApi.css"
             </Button>
             <form className={classes.root} autoComplete="off">
                 <div >
-                    <h1 className="ml-5">Summary Api</h1>
+                    <h1 className="ml-5 mt-3 ">Summary Api</h1>
 
                     <div className="d-flex flex-row row w-100 ml-3 mt-5">
                         <div className="d-flex flex-column col-5 ml-3 shadow-lg rounded" style={{ position: "relative" }}>
-                            <div className="txt-title-name" style={{background: "white", margin: "5px"}}>
+                            <div className="txt-title-name" style={{background: "white", margin: "5px", marginLeft: "10px", zIndex :100}}>
                                  <h2 >Name Api</h2>
                             </div>
                             <div className="d-flex flex-row row mt-3">
@@ -182,7 +182,7 @@ import "./PostApi.css"
                             </div>
                         </div>
                         <div className="video-container flex-column col-6 ml-3 pr-3 shadow-lg rounded" style={{ minHeight: "100px", position: "relative" }}>
-                        <div className="txt-title-name" style={{background: "white", margin: "5px"}}>
+                        <div className="txt-title-name" style={{background: "white", margin: "5px" , marginLeft: "5%", zIndex :100}} >
                             <h2 >Video Api</h2>
                         </div>
                             <div className="  d-flex flex-row row mt-3" style={{ color: "black !important" }}>
@@ -230,7 +230,7 @@ import "./PostApi.css"
                 <h1 className="ml-5 mt-3">Images & Pricing</h1>
                 <div className="d-flex justify-content-center w-100 row mb-5" style={{ position: "relative" }}>
                     <div className="shadow-lg m-5 col-5 rounded" style={{ background: "inherit", height: "50%" }}>
-                    <div className="txt-title-name" style={{background: "white", margin: "5px"}}>
+                    <div className="txt-title-name" style={{background: "white", margin: "5px", zIndex :100}} >
                         <h2 >Media gallery</h2>
                     </div>
                         <ImageUploader
@@ -243,7 +243,7 @@ import "./PostApi.css"
                         />
                     </div>
                     <div className="col-5 shadow-lg rounded mt-5 d-flex flex-column mb-3" style={{ padding: "30px", position: "relative" }}>
-                    <div className="txt-title-name" style={{background: "white", marginLeft: "5%"}}>
+                    <div className="txt-title-name" style={{background: "white", marginLeft: "8%",marginTop: "2%", zIndex :100}} >
                         <h2>Pricing</h2>
                     </div>
                         {price.map((i) => (
