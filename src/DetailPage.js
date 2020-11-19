@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Star, Lock, Target } from "react-feather";
- 
+
 import "./DetailPage.css";
 import ReactPlayer from "react-player"
 import { List } from 'semantic-ui-react'
 import 'semantic-ui-css/semantic.min.css'
 import Carousel, { Modal, ModalGateway } from 'react-images';
- 
+
 export default class DetailPage extends Component {
 
     constructor(props) {
@@ -18,7 +18,7 @@ export default class DetailPage extends Component {
             modalIsOpen: false
         };
     }
-    componentDidMount(){
+    componentDidMount() {
         this.props.setAuthor(true);
     }
     toggleModal = () => {
@@ -45,7 +45,7 @@ export default class DetailPage extends Component {
         const { modalIsOpen } = this.state;
         return (
             <div>
-       
+
 
                 <div className="detailPage">
                     {/* Header */}
@@ -76,8 +76,8 @@ export default class DetailPage extends Component {
                                         <div style={{ marginTop: 4, marginLeft: 5, color: "#637381", fontWeight: 400 }}  >4.6</div>
                                         <a style={{ marginTop: 4, marginLeft: 5 }} href="#">1258 reviews</a>
                                     </div>
-                                <div>
-                                </div>
+                                    <div>
+                                    </div>
                                 </div>
                                 <button type="button" className="btn" style={{ fontFamily: "ShopifySans, Helvetica, Arial, sans-serif", marginTop: 40, backgroundColor: "#5c6ac4", color: "#ffffff", width: "25%", height: "3em" }}>Add app</button>
                                 <div style={{ marginTop: 20, color: "#637381", fontWeight: 400, marginBottom: 0 }}>Free to install. Additional charges may apply.</div>
@@ -111,13 +111,43 @@ export default class DetailPage extends Component {
                     {/* Body */}
                     <hr style={{ margin: 50 }} />
                     <div className="row d-flex justify-content-between" style={{ margin: 50 }}>
-                        <div className="col-4 d-flex flex-column"  >
+                        <div className="col-4 d-flex flex-column "  >
                             <h2> About Facebook channel </h2>
-                            <p style={{ fontSize: "1.25em" }}>The Facebook Channel gives you all the tools you need to successfully sell and market across Facebook and Instagram. Discover new opportunities to help you scale and grow your business, and manage all your Facebook accounts and products from one place.
+                            <div id="txt-description" className="txt-description">
+                                <p style={{ fontSize: "1.25em" }}>The Facebook Channel gives you all the tools you need to successfully sell and market across Facebook and Instagram. Discover new opportunities to help you scale and grow your business, and manage all your Facebook accounts and products from one place.
 
-                            Simple setup...</p>
-                            <button type="button" className="btn-show" style={{ fontFamily: "ShopifySans, Helvetica, Arial, sans-serif", marginTop: 2, width: "50%", height: "3em" }}>Show full description</button>
+                                Simple setup...</p>
+                                <p style={{ fontSize: "1.25em" }}>The Facebook Channel gives you all the tools you need to successfully sell and market across Facebook and Instagram. Discover new opportunities to help you scale and grow your business, and manage all your Facebook accounts and products from one place.
+
+                                Simple setup...</p>
+                                <p style={{ fontSize: "1.25em" }}>The Facebook Channel gives you all the tools you need to successfully sell and market across Facebook and Instagram. Discover new opportunities to help you scale and grow your business, and manage all your Facebook accounts and products from one place.
+
+                                Simple setup...</p>
+                                <p style={{ fontSize: "1.25em" }}>The Facebook Channel gives you all the tools you need to successfully sell and market across Facebook and Instagram. Discover new opportunities to help you scale and grow your business, and manage all your Facebook accounts and products from one place.
+
+                                Simple setup...</p>
+                            </div>
+                            <button type="button" id="btn-show" className="btn-show" style={{ fontFamily: "ShopifySans, Helvetica, Arial, sans-serif", marginTop: 2, width: "50%", height: "3em" }} onClick={()=>
+                            {
+                                console.log(document.getElementById("txt-description").classList);
+                                if(document.getElementById("txt-description").classList.contains("-expanded"))
+                                {
+                                    document.getElementById("txt-description").classList.remove("-expanded");
+                                }
+                                else 
+                                {
+                                    document.getElementById("txt-description").classList.add("-expanded");
+                                }
+                             
+  
+                                if (document.getElementById("txt-description").classList.contains("-expanded")) {
+                                    document.getElementById("btn-show").innerHTML= 'Show less description';
+                                } else {
+                                    document.getElementById("btn-show").innerHTML ="Show full description";
+                                }
+                            }}>Show full description</button>
                         </div>
+
                         <div className="col-3 flex-end flex-column stock">
                             <h1>Support</h1>
                             <div className="d-flex flex-row ">
@@ -126,7 +156,7 @@ export default class DetailPage extends Component {
                             </div>
                             <div className="d-flex flex-row mt-2 ">
                                 <Target />
-                                <a style={{ fontSize: "1.125em", marginTop: 5, marginLeft: 5}} href="#">Get Support</a>
+                                <a style={{ fontSize: "1.125em", marginTop: 5, marginLeft: 5 }} href="#">Get Support</a>
                             </div>
                         </div>
                     </div>
@@ -148,36 +178,36 @@ export default class DetailPage extends Component {
                     <div className="d-flex flex-column " style={{ background: "#f4f6f8" }}>
                         <h2 style={{ margin: "50px 50px 10px 50px" }}>Pricing</h2>
                         <div className="d-flex flex-row row justify-content-center" style={{ marginTop: 10, marginLeft: 50, marginBottom: 20 }}>
-                            <div className="bg-white list-item shadow d-flex flex-column" style={{ borderRadius: 10, minHeight :"20em", marginBottom: 40}}>
+                            <div className="bg-white list-item shadow d-flex flex-column" style={{ borderRadius: 10, minHeight: "20em", marginBottom: 40 }}>
                                 <h5 className="mt-2 text-left"> FREE</h5>
                                 <h3 className="mt-2 text-center"> Free to install</h3>
                                 <List  >
-                                    <List.Item style={{margin: "0px 5px 0px px"}}>
+                                    <List.Item style={{ margin: "0px 5px 0px px" }}>
                                         <List.Icon name='checkmark' fill="green" color="green" />
-                                        <List.Content style={{fontSize: "1.15em"}}>100 monthly review request emails</List.Content>
+                                        <List.Content style={{ fontSize: "1.15em" }}>100 monthly review request emails</List.Content>
                                     </List.Item>
-                                    <List.Item style={{margin: "0px 5px 0px px"}}>
+                                    <List.Item style={{ margin: "0px 5px 0px px" }}>
                                         <List.Icon name='checkmark' fill="green" color="green" />
-                                        <List.Content style={{fontSize: "1.15em"}}>Offer discounts for photo reviews</List.Content>
+                                        <List.Content style={{ fontSize: "1.15em" }}>Offer discounts for photo reviews</List.Content>
                                     </List.Item>
-                                    <List.Item style={{margin: "0px 5px 0px px"}}>
+                                    <List.Item style={{ margin: "0px 5px 0px px" }}>
                                         <List.Icon name='checkmark' fill="green" color="green" />
-                                        <List.Content style={{fontSize: "1.15em"}}>Reviews, Ratings & Popup widgets</List.Content>
+                                        <List.Content style={{ fontSize: "1.15em" }}>Reviews, Ratings & Popup widgets</List.Content>
                                     </List.Item>
-                                    <List.Item style={{margin: "0px 5px 0px px"}}>
+                                    <List.Item style={{ margin: "0px 5px 0px px" }}>
                                         <List.Icon name='checkmark' fill="green" color="green" />
-                                        <List.Content style={{fontSize: "1.15em"}}>Inline SEO</List.Content>
+                                        <List.Content style={{ fontSize: "1.15em" }}>Inline SEO</List.Content>
                                     </List.Item>
-                                    <List.Item style={{margin: "0px 5px 0px px"}}>
+                                    <List.Item style={{ margin: "0px 5px 0px px" }}>
                                         <List.Icon name='checkmark' fill="green" color="green" />
-                                        <List.Content style={{fontSize: "1.15em"}}>Up to 500 processed orders</List.Content>
+                                        <List.Content style={{ fontSize: "1.15em" }}>Up to 500 processed orders</List.Content>
                                     </List.Item>
 
-                                    
+
                                 </List>
-                                
+
                             </div>
-                            <div className="bg-white list-item shadow d-flex flex-column" style={{ borderRadius: 10, minHeight :"20em", marginBottom: 40}}>
+                            <div className="bg-white list-item shadow d-flex flex-column" style={{ borderRadius: 10, minHeight: "20em", marginBottom: 40 }}>
                                 <h5 className="mt-2 text-left"> FREE</h5>
                                 <h3 className="mt-2 text-center"> Free to install</h3>
                                 <List>
@@ -202,11 +232,11 @@ export default class DetailPage extends Component {
                                         <List.Content>Up to 500 processed orders</List.Content>
                                     </List.Item>
 
-                                    
+
                                 </List>
-                                
+
                             </div>
-                            <div className="bg-white list-item shadow d-flex flex-column" style={{ borderRadius: 10, minHeight :"20em", marginBottom: 40}}>
+                            <div className="bg-white list-item shadow d-flex flex-column" style={{ borderRadius: 10, minHeight: "20em", marginBottom: 40 }}>
                                 <h5 className="mt-2 text-left"> FREE</h5>
                                 <h3 className="mt-2 text-center"> Free to install</h3>
                                 <List>
@@ -231,15 +261,15 @@ export default class DetailPage extends Component {
                                         <List.Content>Up to 500 processed orders</List.Content>
                                     </List.Item>
 
-                                    
+
                                 </List>
-                                
+
                             </div>
- 
-                         </div>
+
+                        </div>
                     </div>
                 </div>
- 
+
             </div>
 
 

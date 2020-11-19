@@ -29,4 +29,25 @@
     padding: 0 10px 0 10px;
   }
  
+  .txt-description
+  { 
+     position: relative;
+    max-height: 100px;
+    overflow: hidden;
+    transition: max-height 1s ease;
     
+
+
+  }
+  .-expanded  {
+    max-height: 400px !important;
+  }
+  .txt-description:not(.-expanded)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  }
